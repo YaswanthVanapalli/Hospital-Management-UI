@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MediConnect - Hospital System</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <nav>
+    <h1>MediConnect</h1>
+    <ul>
+      <li><a href="#" onclick="showSection('home')">Home</a></li>
+      <li><a href="#" onclick="showSection('doctor')">Doctor</a></li>
+      <li><a href="#" onclick="showSection('patient')">Patient</a></li>
+      <li><a href="#" onclick="showSection('admin')">Admin</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Home -->
+    <section id="home" class="visible">
+      <h2>Welcome to MediConnect</h2>
+      <p>A single-page hospital & appointment management system.</p>
+    </section>
+
+    <div class="wrapper">
+    <div class="form-box">
+      <h2 id="formTitle">Login</h2>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="form active">
+        <input type="text" id="loginUsername" placeholder="Username" required />
+        <input type="password" id="loginPassword" placeholder="Password" required />
+        <button type="submit">Login</button>
+        <p id="loginStatus" class="status"></p>
+        <p class="switch">Don't have an account? <a href="#" onclick="showRegister()">Register</a></p>
+      </form>
+
+      <!-- Register Form -->
+      <form id="registerForm" class="form hidden">
+        <input type="text" id="registerUsername" placeholder="Username" required />
+        <input type="password" id="registerPassword" placeholder="Password" required />
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+        <button type="submit">Register</button>
+        <p id="registerStatus" class="status"></p>
+        <p class="switch">Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+      </form>
+    </div>
+  </div>
+
+
+
+    <!-- Doctor Registration -->
+    <section id="doctor" class="hidden">
+      <h2>Doctor Registration</h2>
+      <form id="doctorForm">
+        <input type="text" placeholder="Name" required />
+        <input type="text" placeholder="Qualification" required />
+        <input type="text" placeholder="Specializations (comma-separated)" required />
+        <input type="number" placeholder="Years of Experience" required />
+        <input type="text" placeholder="Hospital Name" required />
+        <input type="number" placeholder="Consultation Fee" required />
+        <input type="datetime-local" placeholder="Availability" required />
+        <button type="submit">Register Doctor</button>
+      </form>
+    </section>
+
+    <!-- Patient Booking -->
+    <section id="patient" class="hidden">
+      <h2>Book Appointment</h2>
+      <form id="patientForm">
+        <input type="text" placeholder="Patient Name" required />
+        <input type="text" placeholder="Gender" required />
+        <input type="date" placeholder="Date of Birth" required />
+        <input type="text" placeholder="Unique ID (e.g., Aadhar)" required />
+        <input type="text" placeholder="Doctor Name" required />
+        <input type="datetime-local" placeholder="Preferred Time Slot" required />
+        <input type="number" placeholder="Consultation Fee" required />
+        <button type="submit">Book Appointment</button>
+      </form>
+    </section>
+
+    <!-- Admin Dashboard -->
+    <section id="admin" class="hidden">
+      <h2>Hospital Admin Dashboard</h2>
+      <div class="dashboard">
+        <div>Total Consultations: <span id="totalConsultations">0</span></div>
+        <div>Total Revenue: ₹<span id="totalRevenue">0</span></div>
+        <div>Doctors Registered: <span id="doctorCount">0</span></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
